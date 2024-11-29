@@ -39,7 +39,7 @@ jobs:
     # Étape 5 : Tester l'application Flask
     - name: Run Flask tests
       run: |
-        python -m pytest test.py --disable-warnings
+        python -m pytest test_app.py --disable-warnings
 
     # Facultatif : Vous pouvez aussi démarrer l'application pour des tests manuels.
     - name: Start Flask server
