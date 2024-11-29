@@ -66,16 +66,13 @@ if __name__ == "__main__":
     # 4. Évaluation du modèle
     accuracy, recall = evaluate_model(model, X_test, y_test)
 
-    # 5. Afficher les importances des caractéristiques
-    show_feature_importances(model, features)
-
-    # 6. Validation croisée
+    # 5. Validation croisée
     perform_cross_validation(model, X, y)
 
-    # 7. Sauvegarder le modèle
+    # 6. Sauvegarder le modèle
     save_model(model)
 
-    # 8. Charger et tester le modèle sauvegardé
+    # 7. Charger et tester le modèle sauvegardé
     loaded_model = read_model()
     _, recall_loaded_model = evaluate_model(loaded_model, X_test, y_test)
     print(f"Rappel du modèle chargé : {recall_loaded_model}")
