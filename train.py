@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, recall_score
-from IPython.display import display
 import joblib
 
 # --- Fonctions principales ---
@@ -38,16 +37,6 @@ def evaluate_model(model, X_test, y_test):
     print(f"Accuracy du modèle : {accuracy}")
     print(f"Rappel du modèle : {recall}")
     return accuracy, recall
-
-
-def show_feature_importances(model, features):
-    """
-    Afficher les importances des caractéristiques du modèle.
-    """
-    importances = model.feature_importances_
-    feature_importances = pd.DataFrame({'Feature': features, 'Importance': importances})
-    feature_importances = feature_importances.sort_values(by='Importance', ascending=False)
-    display(feature_importances)
 
 
 def perform_cross_validation(model, X, y, cv=5):
